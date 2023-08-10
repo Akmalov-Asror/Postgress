@@ -20,4 +20,6 @@ public class AppDbContext : DbContext
     public DbSet<Teacher> Teachers { get; set; }
     public DbSet<Test> Tests { get; set; }
 
+
+
 }
