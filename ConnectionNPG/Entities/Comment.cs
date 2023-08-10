@@ -1,10 +1,16 @@
-﻿namespace ConnectionNPG.Entities;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace ConnectionNPG.Entities;
 
 public class Comment
 {   
     public Guid Id { get; set; }
-    public Guid? Task_Id { get; set; }
-    public Guid? User_Id { get; set; }
+    public Guid? TaskId { get; set; }
+    [ForeignKey(nameof(TaskId))]
+    public Task? Task { get; set; }
+    public Guid? UserId { get; set; }
+    [ForeignKey(nameof(UserId))]
+    public User? User { get; set; }  
     public string? Desc { get; set; }
     public string? DocumentPath { get; set; }
 }
